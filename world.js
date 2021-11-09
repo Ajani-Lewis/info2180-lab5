@@ -1,11 +1,22 @@
 window.onload = function (){
 
-    let lookupBtn = document.getElementById("lookup");
+    let lookupCntryBtn = document.getElementById("lookup");
+    let lookupCityBtn = document.getElementById("city");
 
-    lookupBtn.addEventListener("click",lookupBtnClicked);
+    lookupCntryBtn.addEventListener("click",lookupBtnClicked);
+    lookupCityBtn.addEventListener("click",lookupBtnClicked);
 
     function lookupBtnClicked(e){
+        var mode = "";
+        //console.log(e.target.innerHTML == "Lookup Country")
 
+        if(e.target.innerHTML=="Lookup Country"){
+            mode = "country"
+        }else{
+            mode = "city"
+        }
+        
+        
         const htr = new XMLHttpRequest();
 
         country = sanitizeStr(document.getElementById("country").value);
@@ -16,8 +27,9 @@ window.onload = function (){
             }
         }
 
-        htr.open("GET", "http://localhost/info2180-lab5/world.php?country="+country);
+        htr.open("GET", "http://localhost/info2180-lab5/world.php?country="+country+"&mode="+mode);
         htr.send();
+        
 
     }
 

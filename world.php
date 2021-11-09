@@ -14,7 +14,7 @@ $c_array = array();
 
 ?>
 
-<table>
+<table border="1" cellpadding="2">
 
 <?php if($mode=="country"){ 
   
@@ -48,22 +48,24 @@ $c_array = array();
       array_push($c_array,$data['code']);
     }
   
-    array_unique($c_array);
+    ?>
   
-    if(count($c_array)>1){
-  
-      echo("Please Enter Full Name of Country!");
-    }else{ 
-  
-      $stmt2 = $conn->query("SELECT * FROM cities WHERE country_code LIKE '%$c_array[0]%'"); 
-      $cityResults = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-      ?>
-      
       <tr>
         <th>City Name</th>
         <th>District</th>
         <th>Population</th>
       </tr>
+
+
+      <?php
+      foreach($c_array as $code){
+
+      
+      $stmt2 = $conn->query("SELECT * FROM cities WHERE country_code LIKE '%$code%'"); 
+      $cityResults = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+      ?>
+      
+      
   
       <?php foreach ($cityResults as $row): ?>
         <tr>

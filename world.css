@@ -1,1 +1,82 @@
-/* Add your own styles */
+body{
+    margin: 0;
+    font-family: Verdana, Arial, Tahoma, Serif;
+    background-color: lightgray;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "header"
+    "search-bar"
+    "message"
+    ;
+
+}
+
+header{
+    grid-area: header;
+    background-color: rgb(83, 87, 138);
+    padding: 30px 0px;
+    color: white;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.search{
+    grid-area: search-bar;
+    padding-bottom: 20px;
+
+}
+
+#controls{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+}
+
+#search-bar{
+    flex: 1;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+#country{
+    width: 500px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+#buttons{
+    flex: 1;
+}
+
+.btn{
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    padding: 5px;
+}
+
+.message{
+    grid-area: message;
+    text-align: center;
+}
+
+#result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -13,20 +13,39 @@
 
 	<body>
 		<header>
-			<h1>World Database Lookup</h1>
+			<div class="container">
+				<div class="content">
+					<img src="globe.png" alt="Globe" id="globe" width=80px >	
+					<h1>World Database Lookup</h1>
+				</div>
+			</div>
 		</header>
 
 		<main>
-			<div id="controls">
-				<label for="country">Country:</label>
-				<input id="country" type="search" name="country" placeholder="Enter country name" />
-				<button id="lookup">Lookup Country</button>
-				<button id="city">Lookup City</button>
-			</div>
-			
-			<div id="result">
-				<!-- countries will appear here -->
-			</div>
+			<section class="search">
+				<div class="container">
+					<div id="controls">
+						<div id="search-bar">
+							<input id="country" type="search" name="country" placeholder="Enter country name" />
+						</div>
+						<div id="buttons">	
+							<button id="lookup" class="btn">Lookup Country</button>
+							<button id="city" class="btn">Lookup City</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="message">
+				<div class="container">
+					<table>
+						<div id="result">
+							<!-- countries will appear here -->
+						</div>
+					</table>
+				</div>
+			</section>
+
 		</main>
 
 	</body>
